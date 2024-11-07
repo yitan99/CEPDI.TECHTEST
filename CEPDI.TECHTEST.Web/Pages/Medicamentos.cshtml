@@ -1,0 +1,76 @@
+﻿@page
+@model MedicamentosModel
+@{
+    ViewData["Title"] = "Medicamentos";
+}
+
+<p class="container">
+    <h2>Medicamentos</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalM" onclick="clearTextBoxM();">
+        Agregar nuevo medicamento
+    </button><br /><br />
+    <table class="data_tableM table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>IDMEDICAMENTO</th>
+                <th>NOMBRE</th>
+                <th>CONCENTRACION</th>
+                <th>IDFORMAFARMACEUTICA</th>
+                <th>PRECIO</th>
+                <th>PRESENTACION</th>
+                <th>HABILITADO</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody class="tbodyM">
+            <!-- Employee records will be populated here -->
+        </tbody>
+    </table>
+</p>
+
+<div class="modal fade" id="myModalM" tabindex="-1" role="dialog" aria-labelledby="myModalMLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="cerrarModalM()">×</button>
+                <h4 class="modal-title" id="myModalMLabel">Agregar usuario</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="idusuario">IDMEDICAMENTO</label>
+                        <input type="text" class="form-control" id="idmedicamento" placeholder="idmedicamento" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">NOMBRE</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="nombre" />
+                    </div>
+                    <div class="form-group">
+                        <label for="fechacreacion">CONCENTRACION</label>
+                        <input type="text" class="form-control" id="concentracion" />
+                    </div>
+                    <div class="form-group">
+                        <label for="usuario">IDFORMAFARMACEUTICA</label>
+                        <input type="text" class="form-control" id="idformafarmaceutica" placeholder="idformafarmaceutica"  />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">PRECIO</label>
+                        <input type="text" class="form-control" id="precio" placeholder="precio" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">PRESENTACION</label>
+                        <input type="text" class="form-control" id="presentacion" placeholder="presentacion" />
+                    </div>
+                    <div class="form-group">
+                        <label for="estatus">HABILITADO</label>
+                        <input type="text" class="form-control" id="bhabilitado" placeholder="bhabilitado" disabled="disabled" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return AddM();">Agregar</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="UpdateM();">Actualizar</button>
+            </div>
+        </div>
+    </div>
+</div>

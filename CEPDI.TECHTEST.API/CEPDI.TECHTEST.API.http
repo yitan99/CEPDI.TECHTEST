@@ -1,0 +1,6 @@
+@CEPDI.TECHTEST.API_HostAddress = http://localhost:5078
+
+GET {{CEPDI.TECHTEST.API_HostAddress}}/usuarios/
+Accept: application/json
+
+###

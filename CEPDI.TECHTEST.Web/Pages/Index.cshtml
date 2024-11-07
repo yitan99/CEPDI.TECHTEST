@@ -1,0 +1,71 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Usuarios/Medicamentos";
+}
+
+<p class="container">
+    <h2>Usuarios</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">
+        Agregar nuevo usuario
+    </button><br /><br />
+    <table class="data_table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>IDMEDICAMENTO</th>
+                <th>NOMBRE</th>
+                <th>FECHA CREACION</th>
+                <th>USUARIO</th>
+                <th>PASSWORD</th>
+                <th>ESTATUS</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <!-- Employee records will be populated here -->
+        </tbody>
+    </table>
+</p>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="cerrarModal()">×</button>
+                <h4 class="modal-title" id="myModalLabel">Agregar usuario</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="idusuario">IDUSUARIO</label>
+                        <input type="text" class="form-control" id="idusuario" placeholder="idusuario" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">NOMBRE</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="nombre" />
+                    </div>
+                    <div class="form-group">
+                        <label for="fechacreacion">FECHA CREACION</label>
+                        <input type="date" class="form-control" id="fechacreacion" />
+                    </div>
+                    <div class="form-group">
+                        <label for="usuario">USUARIO</label>
+                        <input type="text" class="form-control" id="usuario" placeholder="usuario" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">PASSWORD</label>
+                        <input type="text" class="form-control" id="password" placeholder="password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="estatus">ESTATUS</label>
+                        <input type="text" class="form-control" id="estatus" placeholder="estatus" disabled="disabled" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Agregar</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Actualizar</button>
+            </div>
+        </div>
+    </div>
+</div>
